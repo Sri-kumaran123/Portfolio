@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: "Poppins", serif;
+
+}
+
+*::-webkit-scrollbar {
+    display: none; 
+  }
+
+.home-bg{
+    background: linear-gradient(172deg, rgba(0,0,0,0.017241379310344862) 0%, rgba(0,0,0,0.7413793103448276) 74%, rgba(0,0,0,1) 100%);
+}
+
+.back-bg{
+    background: linear-gradient(172deg, rgba(0,0,0,0.9859593495601365) 0%, rgba(202,71,210,0.7870797977394083) 33%, rgba(161,0,242,1) 100%);
+}
+
+.second-bg{
+    background:linear-gradient(180deg, rgba(0,0,0,0.9859593495601365) 0%, rgba(0,0,0,1) 16%, rgba(32,12,100,1) 100%);
+}
+
+.glass-effect {
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.05)
+    ); /* Subtle gradient for depth */
+    backdrop-filter: blur(15px) saturate(180%); /* Increased blur and saturation */
+    -webkit-backdrop-filter: blur(15px) saturate(180%); /* Safari compatibility */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Semi-transparent border */
+    border-radius: 1rem; /* Rounded corners */
+    padding: 2rem; /* Internal spacing */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25), /* Soft shadow for depth */
+                0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth animation */
+    position: relative; /* For pseudo-element layering */
+    overflow: hidden; /* Hide pseudo-elements */
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+@property --col{
+    syntax: "<angle>";
+    initial-value: blue;
+    inherits: false;
+}
+@property --size{
+    syntax: "<angle>";
+    initial-value: 75%;
+    inherits: false;
+}
+.bg-ani{
+    --angle:90deg;
+    --col:rgba(0, 0, 255, 0.353);
+    --size:75%;
+    border-radius: 20px;
+    position: relative;
+    transition: all;
+    
+    
+}
+
+.bg-ani, .bg-ani::before{
+    background-image: conic-gradient(from var(--angle),transparent var(--size),var(--col));
+    animation: 5s spin linear infinite;
+    
+}
+
+@keyframes spin {
+    0%{
+        --angle:90deg;
+        --col:rgba(0, 0, 255, 0.353);
+        --size:75%;
+    }
+    60%{
+        --col:transparent;
+        --angle:400deg;
+        --size:40%;
+    }
+   
+    100%{
+        --angle:405deg;
+        --col:transparent;
+        --size:70%;
+    }
+    
+}
+
+.bg-ani::after, .bg-ani::before{
+    content: '';
+    position: absolute;
+    height: 97%;
+    width: 97%;
+    background-color: black;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    border-radius: 20px;
+    
+    
+}
+
+.bg-ani::before{
+    background-color: transparent;
+    height: 110%;
+    width: 110%;
+    filter: blur(1.5rem);
+    opacity: 0.5;
+}
+
+.spl {
+    transform-style: preserve-3d; /* Ensures child elements are in 3D space */
+    transition: transform 0.6s ease-in-out;
+    transform: rotateY(180deg);
+}
+ 
+
+
+
+.element::-webkit-scrollbar {
+    display: none; 
+  }
+@layer components{
+    .position-x{
+        @apply sm:px-16 px-6;
+    }
+
+    .position-y{
+        @apply sm:py-16 py-6;
+    }
+
+    .point{
+        @apply py-2 px-6 
+    }
+
+    .point-a{
+        @apply inset-0 rounded-full bg-gradient-to-r from-[#1E3A8A] via-[#2563EB] to-[#1E40AF] p-[2px]
+    }
+}
+
+@layer utilities {
+    /* Hide scrollbar for Chrome, Safari, and Opera */
+    .no-scrollbar::-webkit-scrollbar {
+    display: none;
+    }
+}
