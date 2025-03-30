@@ -8,7 +8,7 @@ import Education from './pages/Education';
 import { Backvedio } from './components/Backvedio';
 import Skiils from './pages/Skills';
 import Projects from './pages/Projects';
-import Contact from './pages/Contact';
+import Contact from './pages/Contact.jsx';
 import Footer from './pages/Footer';
 
 function App() {
