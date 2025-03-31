@@ -60,7 +60,7 @@ npm start  # or yarn start
 ## 📬 **Contact**
 📧 **Email**: srikumaran.sivarajan@gmail.com 
 🔗 **LinkedIn**: [linkedin.com](https://www.linkedin.com/in/srikumaran-s-450866245/)  
-🌐 **Portfolio**: [yourwebsite.com](https://yourwebsite.com)
+🌐 **Portfolio**: [srikumaran](https://srikumaran-sivarajan.netlify.app/)
 
 ---
 

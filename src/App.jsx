@@ -1,4 +1,6 @@
-
+// MIT License
+// Copyright (c) 2025 Srikumaran
+// See LICENSE file for details.
 
 import './App.css';
 import {BrowserRouter} from "react-router-dom";
